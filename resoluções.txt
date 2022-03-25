@@ -1,0 +1,385 @@
+Algoritmo "numeros_pares"
+
+Var
+
+   i, n : inteiro
+   vet : vetor [0..9] de inteiro
+   soma, cont : real
+
+Inicio
+
+   escreva("QUANTOS NUMEROS VOCÊ VAI DIGITAR: ")
+   leia(n)
+   
+   para i de 0 ate n-1 faca
+        escreva("DIGITE UM NUMERO: ")
+        leia(vet[i])
+   fimpara
+   
+   escreval
+   escreva("NUMEROS PARES:")
+   
+   soma <- 0
+   cont <- 0
+   
+   para i de 0 ate n-1 faca
+        se vet[i]%2 = 0 entao
+           escreva(vet[i])
+           cont <- cont + 1
+        fimse
+   fimpara
+   
+   escreval
+   escreva("QUANTIDADE DE PARES: ", cont)
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "maior_posicao"
+
+Var
+
+   i , n : inteiro
+   maior, posicao : real
+   vet : vetor [0..9] de real
+
+Inicio
+
+   escreva("QUNATOS NUMEROS VOCÊ VAI DIGITAR: ")
+   leia(n)
+   
+   para i de 0 ate n-1 faca
+        escreva("DIGITE O NUMERO: ")
+        leia(vet[i])
+   fimpara
+
+   escreval
+   
+   maior <- 0
+   
+   para i de 0 ate n-1 faca
+        se vet[i] > maior entao
+           maior <- vet[i]
+           posicao <- i + 1
+        fimse
+   fimpara
+   
+   escreval("MAIOR VALOR: ", maior:3:1)
+   escreval("POSIÇÃO DO MAIOR VALOR: ", posicao)
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "soma_vetores"
+
+Var
+
+   i , n : inteiro
+   veta : vetor[0..9] de real
+   vetb : vetor[0..9] de real
+   vetc : vetor[0..9] de real
+
+Inicio
+
+   escreva("QUANTOS VALORES SERÃO DIGITADOS: ")
+   leia(n)
+   
+   escreval
+   escreval("DIGITE OS VALORES DO VETOR A:")
+   para i de 0 ate n-1 faca
+        escreva("DIGITE O VALOR: ")
+        leia(veta[i])
+   fimpara
+   
+   escreval
+   escreval("DIGITE OS VALORES DO VETOR B:")
+   para i de 0 ate n-1 faca
+        escreva("DIGITE O VALOR: ")
+        leia(vetb[i])
+   fimpara
+
+   escreval
+   escreval("VALORES RESULTANTES")
+   
+   para i de 0 ate n-1 faca
+        vetc[i] <- veta[i] + vetb[i]
+        escreval(vetc[i])
+   fimpara
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "abaixo_da_media"
+
+Var
+
+   i , n : inteiro
+   vet : vetor [0..9] de real
+   media, soma : real
+
+Inicio
+
+   escreva("QUANTOS VALORES SERÃO INFORMADOS: ")
+   leia(n)
+   
+   para i de 0 ate n-1 faca
+        escreva("DIGITE O VALOR: ")
+        leia(vet[i])
+   fimpara
+
+   soma <- 0
+   
+   para i de 0 ate n-1 faca
+        soma <- soma + vet[i]
+   fimpara
+
+   media <- soma / n
+
+   escreval
+   escreval("MEDIA DO VALOR: ", media)
+   escreval("ELEMENTOS ABAIXO DA MEDIA: ")
+   
+   para i de 0 ate n-1 faca
+        se vet[i] < media entao
+           escreval(vet[i]:3:1)
+        fimse
+   fimpara
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "abaixo_da_media"
+
+Var
+
+   i , n, cont : inteiro
+   vet : vetor [0..9] de real
+   soma, media : real
+
+Inicio
+
+   escreva("INFORME A QUANTIDADE DE NUMEROS: ")
+   leia(n)
+
+   para i de 0 ate n-1 faca
+        escreva("DIGITE O VALOR: ")
+        leia(vet[i])
+   fimpara
+
+   soma <- 0
+   cont <- 0
+
+   para i de 0 ate n-1 faca
+        se vet[i]%2 = 0 entao
+           soma <- soma + vet[i]
+           cont <- cont + 1
+        fimse
+   fimpara
+   
+   escreval
+   
+   se cont <> 0 entao
+      media <- soma / cont
+      escreval("MEDIA DOS PARES: ", media:3:1)
+   senao
+      escreval("NENHUM NUMERO PAR")
+   fimse
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "mais_velho"
+
+Var
+
+   i, n, maior: inteiro
+   nome : vetor [0..9] de caractere
+   idade : vetor [0..9] de inteiro
+   velho : caractere
+
+Inicio
+
+   escreva("QUANTAS PESSOAS: ")
+   leia(n)
+   
+   para i de 0 ate n-1 faca
+        escreval("INFORME OS DADOS DA ", i+1 ,"° PESSOA")
+        escreva("NOME: ")
+        leia(nome[i])
+        escreva("IDADE: ")
+        leia(idade[i])
+   fimpara
+
+   para i de 0 ate n-1 faca
+        se idade[i] > maior entao
+           maior <- idade[i]
+           velho <- nome[i]
+        fimse
+   fimpara
+   
+   escreval
+   escreval("A PESSOA MAIS VELHA: ", velho)
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "aprovados"
+
+Var
+
+   i, n: inteiro
+   alunos : vetor [0..9] de caractere
+   nota1 : vetor [0..9] de real
+   nota2 : vetor [0..9] de real
+   media : vetor [0..9] de real
+
+Inicio
+
+   escreva("QUANTOS ALUNOS: ")
+   leia(n)
+   
+   para i de 0 ate n-1 faca
+        escreval("INFORMAÇÕES DO ", i+1 ,"° ALUNO.")
+        escreva("NOME: ")
+        leia(alunos[i])
+        escreva("1° NOTA: ")
+        leia(nota1[i])
+        escreva("2° NOTA: ")
+        leia(nota2[i])
+        escreval
+   fimpara
+
+   para i de 0 ate n-1 faca
+        media[i] <- (nota1[i] + nota2[i]) / 2
+   fimpara
+   
+   escreval
+   escreval("ALUNOS APROVADOS:")
+
+   para i de 0 ate n-1 faca
+        se media[i] >= 6 entao
+           escreval(alunos[i])
+        fimse
+   fimpara
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "dados_pessoas"
+
+Var
+
+   i, n, cont, contm : inteiro
+   genero : vetor [0..9] de caractere
+   altura : vetor [0..9] de real
+   menor, maior, soma, media : real
+
+Inicio
+
+   escreva("QUANTAS PESSOAS: ")
+   leia(n)
+   escreval
+   
+   para i de 0 ate n-1 faca
+        escreva("ALTURA DA ", i+1 ,"° PESSOA:")
+        leia(altura[i])
+        escreva("GENERO DA ", i+1 ,"° PESSOA:")
+        leia(genero[i])
+        escreval
+   fimpara
+
+   menor <- 100
+
+   para i de 0 ate n-1 faca
+        se altura[i] < menor entao
+           menor <- altura[i]
+        fimse
+   fimpara
+
+   maior <- 0
+
+   para i de 0 ate n-1 faca
+        se altura[i] > maior entao
+           maior <- altura[i]
+        fimse
+   fimpara
+   
+   soma <- 0
+   cont <- 0
+   
+   para i de 0 ate n-1 faca
+        se genero[i] = "F" entao
+           soma <- soma + altura[i]
+           cont <- cont + 1
+        senao
+           contm <- contm + 1
+        fimse
+   fimpara
+   
+   media <- soma / cont
+   
+   escreval
+   escreval("MAIOR ALTURA: ", maior)
+   escreval("MENOR ALTURA: ", menor)
+   escreval("MEDIA DE ALTURA DAS MULHRES: ", media:3:2)
+   escreval("QUANTIDADE DE HOMENS: ", contm)
+
+Fimalgoritmo
+--------------------------------------------------
+Algoritmo "comerciante"
+
+Var
+
+   nome   : vetor [0..9] de caractere
+   compra : vetor [0..9] de real
+   venda  : vetor [0..9] de real
+   sc, sv, lt, lucro, pl : real
+   i, n , abaixo, entre, acima : inteiro
+
+Inicio
+
+   escreva("QUANTOS PRODUTOS SERÃO DIGITADOS: ")
+   leia(n)
+   escreval
+   
+   para i de 0 ate n-1 faca
+        escreval("ESCREVA OS DADOS DO ", i+1 ,"° PRUDUTO")
+        escreva("NOME: ")
+        leia(nome[i])
+        escreva("VALOR DE COMPRA: ")
+        leia(compra[i])
+        escreva("VALOR DE VENDA: ")
+        leia(venda[i])
+        escreval
+   fimpara
+   
+   abaixo <- 0
+   entre <- 0
+   acima <- 0
+   para i de 0 ate n-1 faca
+        lucro <- venda[i] - compra[i]
+        pl <- lucro * 100 / compra [i]
+        
+        se pl < 10 entao
+           abaixo <- abaixo + 1
+        senao
+           se pl <= 20 entao
+              entre <- entre + 1
+           senao
+              acima <- acima + 1
+           fimse
+        fimse
+   fimpara
+   
+   sc <- 0
+   sv <- 0
+   para i de 0 ate n-1 faca
+        sc <- sc + compra[i]
+        sv <- sv + venda[i]
+   fimpara
+   
+   lt <- sv - sc
+
+    escreval
+    escreval("RELATÓRIO:")
+    escreval("Lucro abaixo de 10%: ", abaixo)
+    escreval("Lucro entre 10% e 20%: ", entre)
+    escreval("Lucro acima de 20%: ", acima)
+    escreval("Valor total da compra: ", sc:4:2)
+    escreval("Valor total de venda: ", sv:4:2)
+    escreval("Lucro total: ", lt:4:2)
+    
+Fimalgoritmo
