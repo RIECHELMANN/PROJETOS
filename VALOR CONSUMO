@@ -1,0 +1,26 @@
+Algoritmo "valor_consumo"
+  
+Var
+  
+   kwh, consumo, consumomes, preco, energiaconsumida : real
+   horas, dias : inteiro
+
+Inicio
+  
+   escreval("*CONSIDERE QUE O MÊS TEM 30 DIAS*")
+   escreva("HORAS LIGADAS: ")
+   leia(horas)
+   escreva("CONSUMO (Kwh/mês): ")
+   leia(consumomes)
+   escreva("DIAS: ")
+   leia(dias)
+   
+   kwh <- 0.53224
+   consumo <- consumomes/30
+   energiaconsumida <- horas * dias * consumo
+   preco <- kwh * energiaconsumida
+   
+   escreval
+   escreva("PREÇO: R$", preco:4:2,".")
+   
+Fimalgoritm
