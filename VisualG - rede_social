@@ -1,0 +1,161 @@
+Algoritmo "rede_social"
+
+Var
+
+   //CADASTRO
+   nome, sobrenome, email, senha, confirme : caractere
+   
+   //LOGIN
+   cemail, csenha : caractere
+   
+   //APLICATIVO
+   acao, alterar, v : caractere
+   escol : inteiro
+
+Inicio
+
+   //CADASTRO
+
+   escreval("=====CADASTRO=====")
+   escreva("NOME: ")
+   leia(nome)
+   escreva("SOBRENOME: ")
+   leia(sobrenome)
+   escreva("E-MAIL: ")
+   leia(email)
+   escreva("CADASTRE SENHA: ")
+   leia(senha)
+   escreva("CONFIRME SENHA: ")
+   leia(confirme)
+   se (confirme <> senha) entao
+      repita
+         escreval("SENHA INCORRETA")
+         escreva("CONFIRME SENHA: ")
+         leia(confirme)
+      ate (confirme = senha)
+   fimse
+   escreval("CONTA CADASTRADA")
+   
+   //LOGIN
+   
+   limpatela
+   escreval
+   escreval("=====LOGIN=====")
+   escreva("EMAIL: ")
+   leia(cemail)
+   se (cemail <> email) entao
+      repita
+         escreval("EMAIL NÃO CADASTRADO.")
+         escreva("EMAIL: ")
+         leia(cemail)
+      ate (cemail = email)
+   fimse
+   escreva("SENHA: ")
+   leia(csenha)
+   se (csenha <> senha) entao
+      repita
+         escreval("SENHA NÃO CADASTRADO.")
+         escreva("SENHA: ")
+         leia(csenha)
+      ate (csenha = senha)
+   fimse
+
+   //APLICATIVO
+   
+   repita
+      limpatela
+      escreval
+      escreval("=====SEJA BEM VINDO ", nome,"=====")
+      escreval
+      escreva("PROCURE: ")
+      leia(acao)
+      escolha acao
+         //PERFIL
+         caso "PERFIL"
+            escreval("NOME: ", nome, " ", sobrenome)
+            escreval("EMAIL: ", email)
+            escreval
+            escreva("ALTERAR INFORMAÇÕES: ")
+            leia(alterar)
+            se alterar = "SIM" entao
+               escreval("1 - NOME E SOBRENOME.")
+               escreval("2 - EMAIL")
+               escreval("3 - SENHA")
+               escreva("O QUE DESEJA ALTERAR: ")
+               leia(escol)
+               escolha escol
+                  //ALTERAR NOME E SOBRENOME
+                  caso 1
+                     escreval("=====ALTERAR NOME E SOBREONOME=====")
+                     escreva("NOME: ")
+                     leia(nome)
+                     escreva("SOBRENOME: ")
+                     leia(sobrenome)
+                     escreval("=====ALTERAÇÃO SALVA=====")
+                     escreval
+                     escreval("APERTE ENTER PARA VOLTAR.")
+                     leia(v)
+                  //ALTERAR EMAIL
+                  caso 2
+                     escreval("=====ALTERAR EMAIL=====")
+                     escreva("E-MAIL: ")
+                     leia(email)
+                     escreval("=====ALTERAÇÃO SALVA=====")
+                     escreval
+                     escreval("APERTE ENTER PARA VOLTAR.")
+                     leia(v)
+                  //ALTERAR SENHA
+                  caso 3
+                     escreval("=====ALTERAR SENHA=====")
+                     escreva("SENHA ANTIGA: ")
+                     leia(csenha)
+                     se (csenha <> senha) entao
+                        repita
+                           escreval("SENHA INCORRETA.")
+                           escreva("SENHA ANTIGA: ")
+                           leia(csenha)
+                        ate (csenha = senha)
+                     fimse
+                     escreva("CADASTRE SENHA: ")
+                     leia(senha)
+                     escreva("CONFIRME SENHA: ")
+                     leia(confirme)
+                     se (confirme <> senha) entao
+                        repita
+                           escreval("SENHA INCORRETA")
+                           escreva("CONFIRME SENHA: ")
+                           leia(confirme)
+                        ate (confirme = senha)
+                     fimse
+                     escreval("=====ALTERAÇÃO SALVA=====")
+                     escreval
+                     escreval("APERTE ENTER PARA VOLTAR.")
+                     leia(v)
+                  //OPÇAO INVALIDA
+                  outrocaso
+                     escreval("OPÇÃO INVALIDA.")
+                     escreval
+                     escreval("APERTE ENTER PARA VOLTAR.")
+                     leia(v)
+               fimescolha
+            fimse
+         //FEED
+         caso "FEED"
+            escreval("NADA POR AQUI AINDA...")
+            escreval
+            escreval("APERTE ENTER PARA VOLTAR.")
+            leia(v)
+         //SAIR
+         caso "SAIR"
+         //OUTROCASO
+         outrocaso
+            escreval("ESTAMOS TRABALHANDO NISSO!")
+            escreval
+            escreval("APERTE ENTER PARA VOLTAR.")
+            leia(v)
+      fimescolha
+   ate acao = "SAIR"
+   //SAIR
+   escreval("SAINDO.")
+
+Fimalgoritmo
